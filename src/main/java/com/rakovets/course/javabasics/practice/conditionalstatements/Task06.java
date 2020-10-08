@@ -9,7 +9,7 @@ import java.util.Scanner;
  * 500 очков. За 1 танк начисляется 100 очков. Вывести результаты боя.
  *
  * @param tanksKilledFirstPlayer  - количество танков, убитых первым игроком
- * @param tanksKilledSecondPlayer - количество танков, убитых вторым игроком
+ * @param tanksKilledSecondPlayer - количество танков, убитых первым игроком
  * @return 'Player 1: {0}. Player 2: {1}', где {0} - очки первого игрока, {1} - очки второго игрока.
  * В случае когда убито одинаковое количество танков, бонусные очки не начисляются никому
  */
@@ -22,6 +22,7 @@ public class Task06 {
         // Ввод данных осуществляется в Console, для проверки различных вариантов входных параметров
 
         // Код необходимый для тестирования, не изменять
+
         Scanner scanner = new Scanner(System.in);
         int tanksKilledFirstPlayer = (args.length != 2) ? scanner.nextInt() : Integer.parseInt(args[0]);
         int tanksKilledSecondPlayer = (args.length != 2) ? scanner.nextInt() : Integer.parseInt(args[1]);
@@ -29,5 +30,17 @@ public class Task06 {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
+        int tanks1 = tanksKilledFirstPlayer * KILL_POINT;
+        int tanks2 = tanksKilledSecondPlayer * KILL_POINT;
+        if (tanksKilledFirstPlayer > tanksKilledSecondPlayer) {
+            tanks1 += BONUS_POINT;
+        } else if (tanksKilledFirstPlayer < tanksKilledSecondPlayer) {
+            tanks2 += BONUS_POINT;
+        }
+
+        System.out.println("Player 1: " + tanks1 + ". " + "Player 2: " + tanks2);
+
+
+
     }
 }

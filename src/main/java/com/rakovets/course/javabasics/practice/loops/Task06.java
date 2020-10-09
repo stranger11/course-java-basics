@@ -23,5 +23,24 @@ public class Task06 {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
+        boolean question = amount < 0;
+        if (question) {
+            amount *= -1;
+        }
+        String result ="";
+        int i = 1;
+        do {
+            long digit = amount % 10;
+            result = digit + result;
+            amount /= 10;
+            if (i % 3 == 0 && amount != 0) {
+                result =" " + result;
+            }
+            i++;
+        } while (amount > 0);
+        if (question) {
+            result = "-" + result;
+        }
+        System.out.println(result);
     }
 }

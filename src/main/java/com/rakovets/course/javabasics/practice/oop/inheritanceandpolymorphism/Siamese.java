@@ -6,13 +6,13 @@ class Siamese extends Cat{
     }
 
     @Override
-    public void Mew() {
-        System.out.println("Miu");
+    public String Mew() {
+        return "Miu";
     }
 
     @Override
-    public void Purr() {
-        System.out.println("Mar");
+    public String Purr() {
+        return "Mar";
     }
 
     @Override

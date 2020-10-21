@@ -6,13 +6,13 @@ class Sphynx extends Cat{
     }
 
     @Override
-    public void Mew() {
-        System.out.println("Mau");
+    public String Mew() {
+        return "Mau";
     }
 
     @Override
-    public void Purr() {
-        System.out.println("MurMur");
+    public String Purr() {
+        return "MurMur";
     }
 
     @Override

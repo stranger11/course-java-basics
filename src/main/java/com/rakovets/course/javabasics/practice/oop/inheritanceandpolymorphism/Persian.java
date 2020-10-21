@@ -6,13 +6,13 @@ class Persian extends Cat {
     }
 
     @Override
-    public void Mew() {
-        System.out.println("MaoMao");
+    public String Mew() {
+        return "MaoMao";
     }
 
     @Override
-    public void Purr() {
-        System.out.println("MarMar");
+    public String Purr() {
+        return "MarMar";
     }
 
     @Override

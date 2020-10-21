@@ -15,12 +15,12 @@ public class Cat {
         person.ChangeHappiness(3);
     }
 
-    public void Mew(){
-        System.out.println("Meow");
+    public String Mew(){
+        return "Meow";
     }
 
-    public void Purr(){
-        System.out.println("Mur");
+    public String Purr(){
+        return "Mur";
     }
 
     public String getName(){

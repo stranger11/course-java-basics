@@ -89,19 +89,23 @@ public class StringUtil {
         return count;
     }
 
-    String getInizials(String str) {
-        String[] tempArray = str.split(" ");
-        String rezult = tempArray[0] + " ";
-        for ( int i = 1; i < tempArray.length; i++) {
-            rezult += tempArray[i].substring(0, 1).toUpperCase() + ". ";
+    String getInizials(String string) {
+        string = string.trim();
+        String[] arr = string.split(" +");
+        String result = "";
+        for (String s : arr) {
+            result += s.charAt(0) + ".";
         }
-        return rezult.trim();
-
-
+        return result.toUpperCase();
     }
 
-
+    String getDigits(String string) {
+        char[] arr = string.toCharArray();
+        String result = "";
+        for (char ch : arr) {
+            if (Character.isDigit(ch))
+                result += ch;
+        }
+        return result;
+    }
 }
-
-
-

@@ -116,6 +116,16 @@ public class StringUtilTest {
     @Test
     void getInizials() {
         StringUtil stringUtil = new StringUtil();
-        Assertions.assertEquals("P Y U", stringUtil.getInizials("Pashyk Yan Urich"));
+        Assertions.assertEquals("P.Y.U.", stringUtil.getInizials("Pashyk Yan Urich"));
+        Assertions.assertEquals("В.И.Л.", stringUtil.getInizials("Владимир Ильич Ленин"));
+        Assertions.assertEquals("И.С.", stringUtil.getInizials("Иванова Светлана"));
+    }
+
+    @Test
+    void getDigits(){
+        StringUtil stringUtil = new StringUtil();
+        Assertions.assertEquals("123", stringUtil.getDigits("rre1fdf2vvgh3"));
+        Assertions.assertEquals("35767", stringUtil.getDigits("fhkdndjcn3jdisjidsj5sududhds7 fjdkfjk6 fdnfhdf7"));
+        Assertions.assertEquals("1997", stringUtil.getDigits("1997"));
     }
 }

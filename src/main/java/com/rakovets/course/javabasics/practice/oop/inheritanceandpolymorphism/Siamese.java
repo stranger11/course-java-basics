@@ -17,11 +17,11 @@ class Siamese extends Cat{
 
     @Override
     public void Mew(Person person) {
-        person.ChangeHappiness(-10);
+        person.changeHappiness(-10);
     }
 
     @Override
     public void Purr(Person person) {
-        person.ChangeHappiness(-10);
+        person.changeHappiness(15);
     }
 }

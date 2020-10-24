@@ -17,11 +17,11 @@ class Persian extends Cat {
 
     @Override
     public void Mew(Person person) {
-        person.ChangeHappiness(20);
+        person.changeHappiness(-15);
     }
 
     @Override
     public void Purr(Person person) {
-        person.ChangeHappiness(20);
+        person.changeHappiness(20);
     }
 }

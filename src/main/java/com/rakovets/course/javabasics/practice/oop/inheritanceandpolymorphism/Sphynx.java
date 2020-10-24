@@ -17,11 +17,11 @@ class Sphynx extends Cat{
 
     @Override
     public void Mew(Person person) {
-        person.ChangeHappiness(30);
+        person.changeHappiness(-20);
     }
 
     @Override
     public void Purr(Person person) {
-        person.ChangeHappiness(30);
+        person.changeHappiness(25);
     }
 }

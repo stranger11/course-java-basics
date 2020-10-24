@@ -8,11 +8,11 @@ public class Cat {
     }
 
     public void Mew(Person person) {
-        person.ChangeHappiness(-2);
+        person.changeHappiness(-5);
     }
 
     public void Purr(Person person) {
-        person.ChangeHappiness(3);
+        person.changeHappiness(10);
     }
 
     public String Mew(){
@@ -27,8 +27,8 @@ public class Cat {
         return name;
     }
 
-    public void setName() {
-        this.name = name;
+    public void setName(String name) {
+        this.name = this.name;
     }
 
 

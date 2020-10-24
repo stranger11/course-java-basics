@@ -7,7 +7,7 @@ public class Person {
         this.happiness = happiness;
     }
 
-    int ChangeHappiness(int percentHappiness){
+    int changeHappiness(int percentHappiness){
         return this.happiness += percentHappiness;
     }
 

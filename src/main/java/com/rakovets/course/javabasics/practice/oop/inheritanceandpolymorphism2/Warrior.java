@@ -1,16 +1,22 @@
 package com.rakovets.course.javabasics.practice.oop.inheritanceandpolymorphism2;
 
 class Warrior extends Hero {
-    public Warrior(String name) {
-        super(name);
+
+
+    public Warrior(String name, int herohealth) {
+        super(name, herohealth);
     }
 
+    String Beast() {
+        return "Warrior transform in Beast!";
+    }
 
     @Override
-    public void attackEnemy(Enemy enemy) {
-        enemy.takeDamage(20);
-       System.out.println("Warrior attack enemy");
+    int attackEnemy(Enemy enemy1) {
+        int remainder = enemy1.takeDamage(10);
+        if (remainder > 0){
+            return remainder;
+        } else
+            return 0;
     }
 }
-
-

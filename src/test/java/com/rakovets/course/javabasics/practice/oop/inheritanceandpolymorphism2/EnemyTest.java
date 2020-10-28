@@ -1,20 +1,23 @@
 package com.rakovets.course.javabasics.practice.oop.inheritanceandpolymorphism2;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 public class EnemyTest {
-    private static Enemy enemy;
 
-    @BeforeAll
-    static void init() {
-        enemy = new Enemy(30);
-    }
+    Enemy enemy = new Enemy(100);
+    Hero hero = new Hero("Sam", 100) {
+        @Override
+        int attackEnemy(Enemy enemy1) {
+            return 0;
+        }
+    };
 
     @Test
-    void enemyTest() {
-        Assertions.assertEquals(30, enemy.getHealth());
-        Assertions.assertEquals(true, enemy.isAlive(enemy));
+    void EnemyTest() {
+        Assertions.assertEquals(100, enemy.getHealth());
+        Assertions.assertEquals(80, enemy.takeDamage(20));
+        Assertions.assertEquals(90, enemy.Revenge(hero, enemy));
+        Assertions.assertEquals(true, enemy.isAlive());
     }
 }

@@ -1,46 +1,31 @@
 package com.rakovets.course.javabasics.practice.oop.inheritanceandpolymorphism2;
 
-public abstract class  Hero {
-    public String name;
-    public int health;
+public abstract class Hero {
 
-    public Hero(String name) {
+    String name;
+    int herohealth;
+    int remainder;
+
+    public Hero(String name, int herohealth) {
         this.name = name;
-        this.health = 0;
+        this.herohealth = herohealth;
     }
-
-    public Hero(String name, int health) {
-        this.name = name;
-        this.health = health;
-    }
-
-    public void dieHero(Hero hero) {
-        if (hero.health < 0) {
-            System.out.printf("%s died", hero.name);
-        }
-        hero.name = "-";
-        hero.health = 0;
-    }
-
-    public void attackHero(Hero hero) {
-        hero.takeDamage(5);
-        System.out.println("Enemy attacks the hero");
-    }
-
-    public void takeDamage(int damage) {
-        this.health -= damage;
-    }
-
-    public abstract void  attackEnemy(Enemy enemy);
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    public int getHealth() {
-        return this.health;
+    String  Indexofhealth() {
+        return ("Health of " + name + ":" + herohealth);
     }
 
-    public void takeHeroDamage(int i) {
+    String HeroesDeath() {
+        if (herohealth == 0){
+            return (name + " is dead!");
+        } else {
+            return (name + " is alive!");
+        }
     }
+
+    abstract int attackEnemy (Enemy enemy1);
 }

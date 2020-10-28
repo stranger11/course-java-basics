@@ -1,42 +1,39 @@
 package com.rakovets.course.javabasics.practice.oop.inheritanceandpolymorphism2;
 
-public class Enemy implements Mortal{
+public class Enemy implements Mortal {
 
-    private int health;
+    int health;
 
     public Enemy(int health) {
         this.health = health;
     }
 
-    public int getHealth() {
-        return health;
-    }
-
-    public int setHealth(int health) {
-        this.health = health;
-        return health;
-    }
-
-    public void attackEnemy(Enemy enemy){
-        enemy.takeDamage(10);
-    }
-
-
-    public int takeDamage(int damage){
+    int takeDamage(int damage) {
         return health -= damage;
     }
 
-    public void attackHero(Hero hero) {
-        hero.takeHeroDamage(10);
-        System.out.println("Enemy attack hero");
+    int Revenge (Hero hero1, Enemy enemy1){
+        int ost = hero1.attackEnemy(enemy1);
+        if(ost != enemy1.health) {
+            return hero1.herohealth - 10;
+        } else
+            return hero1.herohealth;
     }
 
-    @Override
-    public boolean isAlive(Enemy enemy) {
-        if (enemy.health > 0) {
-            return true;
-        }
 
-        return false;
+    public boolean isAlive() {
+        if (health > 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getHealth() {
+        return health;
     }
 }

@@ -1,36 +1,39 @@
 package com.rakovets.course.javabasics.practice.jcf.collection;
 
 import com.rakovets.course.javabasics.example.collections.collection.StringCollectionUtil;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import java.util.Arrays;
+import java.util.Collection;
 
 public class StringCollectionUtilTest {
 
     @Test
     void task2() {
-        String[] array = new String[]{"this", "is", "lots", "of", "fun", "for", "every", "Java", "programmer"};
-        String[] result = new String[]{"*", "is", "*", "of", "fun", "for", "every", "*", "programmer"};
-        ArrayList<String> list = new ArrayList<>();
-        for (String string : array) {
-            list.add(string);
-        }
-        StringCollectionUtil.resetWordsByLength(list, 4);
-        assertArrayEquals(result, list.toArray());
+        StringCollectionUtil stringCollectionUtil = new StringCollectionUtil();
+        Collection<String> list = new ArrayList<String>();
+        list.add("java");
+        list.add("mir");
+        list.add("kent");
+        list.add("of");
+        list.add("stay");
+        Assertions.assertEquals(Arrays.<String>asList("java", "mir", "kent", "*", "stay"), stringCollectionUtil.resetWordsByLength(list, 2));
     }
+
+
 
 
     @Test
     void task3() {
-        String[] array = new String[]{"this", "is", "lots", "of", "fun", "for", "every", "Java", "programmer"};
-        String[] result = new String[]{"is", "of", "fun", "for", "every", "programmer"};
-        ArrayList<String> list = new ArrayList<>();
-        for (String string : array) {
-            list.add(string);
-        }
-        StringCollectionUtil.removeWordsByLength(list, 4);
-        assertArrayEquals(result, list.toArray());
+        StringCollectionUtil stringCollectionUtil = new StringCollectionUtil();
+        Collection<String> list = new ArrayList<String>();
+        list.add("time");
+        list.add("of");
+        list.add("mid");
+        list.add("tomas");
+        list.add("begruj");
+        Assertions.assertEquals(Arrays.<String>asList("time", "mid", "tomas", "begruj"), stringCollectionUtil.removeWordsByLength(list, 2));
     }
 }

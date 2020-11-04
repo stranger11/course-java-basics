@@ -1,25 +1,33 @@
 package com.rakovets.course.javabasics.example.collections.collection;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 
 public class StringCollectionUtil {
-    public static ArrayList<String> resetWordsByLength(ArrayList<String> list, int length) {
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).length() == length) {
-                list.set(i, "*");
-            }
+    public Collection<String> resetWordsByLength(Collection<String> list, int length) {
+        Collection<String> newlist = new ArrayList<String>();
+        String change = "*";
+        for (String str : list) {
+            String result = str.length() == length ? change : str;
+            newlist.add(result);
         }
-        return list;
+
+        return newlist;
+
+
     }
 
-    public static ArrayList<String> removeWordsByLength(ArrayList<String> list, int length) {
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).length() == length) {
-                list.remove(i);
+
+
+    public Collection<String> removeWordsByLength(Collection<String> list, int length) {
+        Collection<String> newList = new ArrayList<String>();
+        for (String str : list) {
+            if (str.length() != length) {
+                newList.add(str);
             }
         }
-        return list;
+        return newList;
     }
 }
 

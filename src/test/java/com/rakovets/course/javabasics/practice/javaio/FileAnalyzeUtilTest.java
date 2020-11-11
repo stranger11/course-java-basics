@@ -10,7 +10,7 @@ import java.util.List;
 public class FileAnalyzeUtilTest {
     String sep = File.separator;
     String textString = "src" + sep + "main" + sep + "resources" + sep + "strings.txt";
-    String textNumbers = "src" + sep + "main" + sep + "resources" + sep + "numbers.txt";
+    //String textNumbers = "src" + sep + "main" + sep + "resources" + sep + "numbers.txt";
 
     @Test
     void Task2(){
@@ -28,7 +28,15 @@ public class FileAnalyzeUtilTest {
     @Test
     void Task4(){
         List<String> list = Arrays.asList("NEO", "OHH");
-        Assertions.assertEquals(list, FileAnalyzeUtil.equalLetters(textString));
+        Assertions.assertEquals(list, FileAnalyzeUtil.equalLetters(textString, "equalLetters1"));
+    }
+
+
+    String textNumbers = "src" + sep + "main" + sep + "resources" + sep + "numbers.txt";
+    @Test
+    void Task5(){
+        List<String> list = Arrays.asList("1 2 3", "67 68 69");
+        Assertions.assertEquals(list, FileAnalyzeUtil.equalLetters(textNumbers, "numbers"));
     }
 
 }

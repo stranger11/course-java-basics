@@ -14,13 +14,13 @@ public class ParallelThreads implements Runnable {
 
     @Override
     public void run() {
-        int arraysInOneThread = 0;
+        int oneThreadArrays = 0;
         if (list.size() % numberOfThreads == 0) {
-            arraysInOneThread = list.size() / numberOfThreads;
+            oneThreadArrays = list.size() / numberOfThreads;
         } else {
-            arraysInOneThread = list.size() / numberOfThreads + 1;
+            oneThreadArrays = list.size() / numberOfThreads + 1;
         }
-        for (int i = (n * arraysInOneThread); (i < (n * arraysInOneThread + arraysInOneThread)) && (i < list.size()); i++) {
+        for (int i = (n * oneThreadArrays); (i < (n * oneThreadArrays + oneThreadArrays)) && (i < list.size()); i++) {
             int maxElement = 0;
             for(int j = 0; j < list.get(i).length; j++) {
                 maxElement = list.get(i)[0];
